@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="App4.Pages.AddTaxaPage" Title="Add Taxa" BackgroundImage="b2">
+     <ContentPage.Padding>
+          <OnPlatform x:TypeArguments="Thickness" iOS="20, 40, 20, 20" Android="10, 20, 20, 20" WinPhone="20, 20, 20, 20" />
+     </ContentPage.Padding>
+     <ContentPage.Content>
+          <ScrollView>
+               <StackLayout Spacing="10"> 
+                    <Label Text="Enter Number of Taxa:"/>
+                    <Entry x:Name="NumTaxa" Text="..." WidthRequest="50" Completed="NumTaxa_OnCompleted"/>
+               </StackLayout>
+               <!--<ContentPage.Content>
+           
+          <StackLayout x:Name="AddTaxaStack" VerticalOptions="Start" HorizontalOptions="Start" Orientation="Vertical" Spacing="10">
+               <Entry x:Name="FirstTaxon"/>
+          </StackLayout>
+          <Button x:Name="AddTaxonBtn" Text="Add Taxa" Clicked="OnAddTaxon"/>
+          <Button x:Name="TaxaListBtn" Text="List of Taxa" IsEnabled="false" Clicked="OnTaxaList"/>
+     </ContentPage.Content>-->
+          </ScrollView>
+     </ContentPage.Content>
+</ContentPage>

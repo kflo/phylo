@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:app4="clr-namespace:App4;assembly=App4"
+             x:Class="App4.Pages.OptionsPage" Appearing="OptionsPage_OnAppearing">
+     <ContentPage.Padding>
+          <OnPlatform x:TypeArguments="Thickness" iOS="20, 40, 20, 20" Android="20, 20, 20, 20" WinPhone="20, 20, 20, 20" />
+     </ContentPage.Padding>
+     <ContentPage.Content>
+          <StackLayout Spacing="20">
+               <StackLayout Orientation="Horizontal">
+                    <Label Text="Number of Characters:" VerticalOptions="Center"/>
+                    <Entry WidthRequest="50" HorizontalOptions="Center"/>
+               </StackLayout>
+               <StackLayout Orientation="Horizontal">
+                    <Label Text="Data Type:" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Picker x:Name="dataTypePicker" Title="Type of Data to Compare" HorizontalOptions="CenterAndExpand"/>
+               </StackLayout>
+               <StackLayout Orientation="Horizontal">
+                    <Label Text="Gap Character:" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Entry WidthRequest="50"/>
+               </StackLayout>
+               <StackLayout Orientation="Horizontal">
+                    <Label Text="Missing Character:" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Entry WidthRequest="50"/>
+               </StackLayout>
+               <StackLayout Orientation="Horizontal">
+                    <Label Text="Interleave Data Matrix:" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Switch x:Name="interleaveSwitch" Toggled="Switch_OnToggled"></Switch>
+               </StackLayout>
+          </StackLayout>
+     </ContentPage.Content>
+</ContentPage>

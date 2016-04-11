@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App4.Pages.StartPage" IsEnabled="true" Title="  PHYLOGEN" BackgroundImage="bg2" >
+     <ContentPage.Content>
+          <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical" Padding="10" Spacing="10">
+               <StackLayout HeightRequest="170"/>
+               <!-->Label HorizontalOptions="FillAndExpand" Text="WELCOME TO PHYLOGEN" FontSize="Large"/-->
+               <BoxView Color="Accent" HeightRequest="2"/>
+               <Label>This app is an interface to make Nexus File generation easier. It does not perform phylogenetic analysis, but it does offer a modern, convenient way to make your data accessible to programs that use the Nexus format, such as PAUP.
+               
+               </Label>
+               <StackLayout Spacing="5">
+               <Button x:Name="OpenFileBtn" HorizontalOptions="FillAndExpand" HeightRequest="65" Opacity="65" Text="Open Nexus File" Clicked="OnOpenFile" IsEnabled="true" BackgroundColor="Accent" BorderRadius="0" FontSize="Large"/>
+               <Button x:Name="CreateFileBtn" HorizontalOptions="FillAndExpand" HeightRequest="65" Opacity="65" Text="Create Nexus File" Clicked="OnCreateFile" IsEnabled="true" BackgroundColor="Accent" BorderRadius="0" FontSize="Large"/>
+               </StackLayout>
+          </StackLayout>
+     </ContentPage.Content>
+</ContentPage>
