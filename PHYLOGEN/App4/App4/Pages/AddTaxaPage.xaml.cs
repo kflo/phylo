@@ -8,7 +8,7 @@ namespace App4.Pages
 
      public partial class AddTaxaPage : ContentPage
      {
-          private readonly Button _addTaxaBtn = new Button {Text = "Add These Taxa", IsEnabled = false};
+          private readonly Button _addTaxaBtn = new Button { Text = "Add These Taxa", IsEnabled = false };
           private readonly Label _noteLabel;
           private readonly Entry _numEntry;
           private readonly StackLayout _taxaStack;
@@ -33,15 +33,15 @@ namespace App4.Pages
                     Orientation = StackOrientation.Vertical,
                     HorizontalOptions = LayoutOptions.FillAndExpand
                };
-               var numLabel = new Label {Text = "Enter Number of Taxa:"};
-               _numEntry = new Entry {WidthRequest = 50};
+               var numLabel = new Label { Text = "Enter Number of Taxa:" };
+               _numEntry = new Entry { WidthRequest = 50 };
                _numEntry.Completed += NumTaxa_OnCompleted;
                _numEntry.Keyboard = Keyboard.Numeric;
                _numEntry.BindingContext = new EntryRestrictions();
                _numEntry.SetBinding(Entry.TextProperty, "Num1To99");
                contentStack.Children.Add(numLabel);
                contentStack.Children.Add(_numEntry);
-               _noteLabel = new Label {Text = "These are the organisms you will be comparing."};
+               _noteLabel = new Label { Text = "These are the organisms you will be comparing." };
                contentStack.Children.Add(_noteLabel);
                contentStack.Children.Add(_taxaStack);
                _addTaxaBtn.Clicked += OnAddTaxa;
@@ -111,14 +111,14 @@ namespace App4.Pages
                          Orientation = StackOrientation.Horizontal,
                          HorizontalOptions = LayoutOptions.FillAndExpand
                     };
-                    _taxonArray[i] = new Entry {Placeholder = "Enter Taxon Name", HorizontalOptions = LayoutOptions.FillAndExpand};
+                    _taxonArray[i] = new Entry { Placeholder = "Enter Taxon Name", HorizontalOptions = LayoutOptions.FillAndExpand };
                     _taxonArray[i].TextChanged += TaxonChanged;
                     _taxonArray[i].Keyboard = Keyboard.Text;
                     _taxonArray[i].BindingContext = new EntryRestrictions();
                     _taxonArray[i].SetBinding(Entry.TextProperty, "ProteinChars");
                     var labelNum = i + 1;
-                    _labelArray[i] = new Label {Text = "Taxon" + labelNum};
-                    _rowBtnArray[i] = new Button {Text = "Remove", BackgroundColor = Color.Red, IsEnabled = true};
+                    _labelArray[i] = new Label { Text = "Taxon" + labelNum };
+                    _rowBtnArray[i] = new Button { Text = "Remove", BackgroundColor = Color.Red, IsEnabled = true };
                     _rowBtnArray[i].Clicked += OnTaxonRemoveClicked;
                     _rowStackArray[i].Children.Add(_labelArray[i]);
                     _rowStackArray[i].Children.Add(_taxonArray[i]);
@@ -136,15 +136,32 @@ namespace App4.Pages
                {
                     if (!string.IsNullOrWhiteSpace(_taxonArray[i].Text))
                     {
-                         App.TaxaList.Add(new Taxon(_taxonArray[i].Text));
+                         double hue = (.18*i)%1;
+                         Random rand = new Random();
+                         Color color = new Color(hue, rand.NextDouble()*i%1, .9);
+                         App.TaxaList.Add(new Taxon(_taxonArray[i].Text, color));
                          //App.TaxaList2.Add(taxonArray[i].Text);
                     }
                }
+               OnReady();
           }
+
+          private void RemoveStackChild(int index)
+          {
+               if (App.TaxaList.Count > index) App.TaxaList.RemoveAt(0);
+               _taxaStack.Children.RemoveAt(index);
+               _numTaxa = _taxaStack.Children.Count;
+          }
+
+          // # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+          //             EVENTS
+          // # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+          public event EventHandler Ready;
 
           private void TaxonChanged(object sender, TextChangedEventArgs e) //checks if Taxa text was changed
           {
-               var entrySent = (Entry) sender;
+               var entrySent = (Entry)sender;
                if (entrySent.Text.Length > 0)
                {
                     _taxaTxtChanged = true;            //OBSOLETE?
@@ -159,11 +176,7 @@ namespace App4.Pages
                RemoveStackChild(btnIndex);
           }
 
-          private void RemoveStackChild(int index)
-          {
-               if (App.TaxaList.Count > index) App.TaxaList.RemoveAt(0);
-               _taxaStack.Children.RemoveAt(index);
-               _numTaxa = _taxaStack.Children.Count;
-          }
+
+          private void OnReady() => Ready?.Invoke(this, EventArgs.Empty);
      }
 }

@@ -22,8 +22,8 @@ namespace App4.Pages
                scrollView = new ScrollView();
                taxaDataStack = new StackLayout
                {
-                    VerticalOptions = LayoutOptions.Start,
-                    HorizontalOptions = LayoutOptions.Start
+                    VerticalOptions = LayoutOptions.StartAndExpand,
+                    HorizontalOptions = LayoutOptions.FillAndExpand
                };
                stackArray = new StackLayout[App.TaxaList2.Count];
                entryArray = new Entry[App.TaxaList2.Count];

@@ -1,4 +1,5 @@
-﻿using App4.Pages;
+﻿using App4.Classes.Options;
+using App4.Pages;
 
 namespace App4
 {
@@ -13,6 +14,7 @@ namespace App4
           public static List<Taxon> TaxaList { get; set; }
           public static List<string> TaxaList2 { get; set; }
           public static List<string> DataTypeList { get; set; }
+
           public App()
           {
                // The root page of your application
@@ -20,6 +22,7 @@ namespace App4
                TaxaList2 = new List<string>();
                ColorList = new List<Color>();
                DataTypeList = new List<string> { "DNA", "RNA", "Protein", "Nucleotide", "Continuous", "Standard" };
+
                MainPage = new NavigationPage(new StartPage());
                //NavigationPage.SetHasNavigationBar(MainPage,false);
           }

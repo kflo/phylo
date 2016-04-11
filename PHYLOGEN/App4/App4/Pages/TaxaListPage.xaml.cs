@@ -13,8 +13,6 @@ namespace App4.Pages
 
                ListView listView = new ListView
                {
-                    
-
                     ItemsSource = App.TaxaList,
 
                     ItemTemplate = new DataTemplate(() =>
@@ -49,8 +47,8 @@ namespace App4.Pages
                     })
                };
 
-               this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
-               this.Content = new StackLayout
+               Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
+               Content = new StackLayout
                {
                     Children =
                     {

@@ -2,7 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App4.Pages.OpenFilePage">
-     <Label Text="Open a File: " VerticalOptions="Center" HorizontalOptions="Center" />
-     <Entry x:Name="FileEntryBox" Text="Browse..." Completed="OnFileSelected"></Entry>
-     <Button x:Name="FileOpenBtn" Text="OPEN" BorderColor="Gray"></Button>
+     <StackLayout Spacing="20" Padding="10">
+          <Label Text="If you have an existing Nexus file, you can open it here to view or edit, in-app: " VerticalOptions="Center" HorizontalOptions="Center" />
+          <Entry x:Name="FilenameEntryBox" Placeholder="Filename..." IsEnabled="False"></Entry>
+          <StackLayout Spacing="5">
+               <Button x:Name="FileBrowseBtn" Text="BROWSE..." HorizontalOptions="FillAndExpand" BackgroundColor="Accent" FontSize="Medium" HeightRequest="70" Clicked="FileBrowseBtn_OnClicked"></Button>
+               <Button x:Name="FileOpenBtn" Text="OPEN" HorizontalOptions="FillAndExpand" IsEnabled="False" HeightRequest="70" FontSize="Medium" Clicked="FileOpenBtn_OnClicked"></Button>
+          </StackLayout>
+     </StackLayout>
 </ContentPage>

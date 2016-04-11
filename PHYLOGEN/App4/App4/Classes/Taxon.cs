@@ -13,10 +13,10 @@ namespace App4.Classes
           public SequenceTypeEnum DataType { get; set; }
           public Color Color { get; set; }
 
-          public Taxon(string name)
+          public Taxon(string name, Color color)
           {
                Name = name;
-               Color = Color.Accent;
+               Color = color;
           }
 
           public void TaxonDataInitialize(SequenceTypeEnum dataType, int numEntries)

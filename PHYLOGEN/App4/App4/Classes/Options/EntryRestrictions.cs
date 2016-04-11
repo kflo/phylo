@@ -8,9 +8,6 @@ namespace App4.Classes.Options
 {
      public class EntryRestrictions : INotifyPropertyChanged
      {
-
-
-
           private string _num1To99;
           public string Num1To99
           {
@@ -22,6 +19,19 @@ namespace App4.Classes.Options
                     OnPropertyChanged();
                }
           }
+
+          private string _num1To9999;
+          public string Num1To9999
+          {
+               get { return _num1To9999; }
+               set
+               {
+                    if (value.Length < 5 && !value.Contains(".") && !value.Equals("0000"))
+                         _num1To9999 = value;
+                    OnPropertyChanged();
+               }
+          }
+
 
           private string _dnaChars;
           public string DnaChars

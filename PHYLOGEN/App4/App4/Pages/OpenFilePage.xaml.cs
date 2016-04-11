@@ -8,11 +8,25 @@ namespace App4.Pages
           public OpenFilePage()
           {
                InitializeComponent();
+               Title = "  OPEN Existing File";
           }
 
-          private void OnFileSelected(object sender, EventArgs e)
+
+          private void FileOpenBtn_OnClicked(object sender, EventArgs e)
           {
-               FileOpenBtn.BorderColor= Color.Aqua;
+               if (true)
+               {
+                    Navigation.PopAsync();
+                    Navigation.PushAsync(new TabbedCreatePage());
+               }
+          }
+
+          private void FileBrowseBtn_OnClicked(object sender, EventArgs e)
+          {
+               FilenameEntryBox.Text = "NexusFile100.nex";
+               //FileBrowseBtn.BackgroundColor = Color.Gray;
+               FileOpenBtn.IsEnabled = true;
+               FileOpenBtn.BackgroundColor = Color.Accent;
           }
      }
 }
