@@ -22,16 +22,15 @@ namespace Phylogen.Pages
           public AddTaxaPage(string title)
           {
                var scrollView = new ScrollView();
-               var contentStack = new StackLayout
-               {
+               var contentStack = new StackLayout {
                     VerticalOptions = LayoutOptions.Start,
                     HorizontalOptions = LayoutOptions.Start
                };
-               _taxaStack = new StackLayout
-               {
+               _taxaStack = new StackLayout {
                     Orientation = StackOrientation.Vertical,
                     HorizontalOptions = LayoutOptions.FillAndExpand
                };
+
                var numLabel = new Label { Text = "Enter Number of Taxa:" };
                _numEntry = new Entry { WidthRequest = 50 };
                _numEntry.Completed += NumTaxa_OnCompleted;

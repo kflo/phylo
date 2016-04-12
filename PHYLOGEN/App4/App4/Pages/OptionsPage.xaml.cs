@@ -12,6 +12,7 @@ namespace Phylogen.Pages
           public char GapChar { get; set; } = Char.MinValue;
           public char MissChar { get; set; } = Char.MinValue;
           public bool InterleaveBool { get; set; } = false;
+          
 
           public OptionsPage(string title)
           {
@@ -21,6 +22,8 @@ namespace Phylogen.Pages
                //dataTypePicker.Items.Add("Protein");
                //dataTypePicker.Items.Add("Continous");
                InitializeComponent();
+               Options opt = Options.GetOptions();
+               BindingContext = opt;
                PostInitialize();
           }
 
@@ -28,9 +31,8 @@ namespace Phylogen.Pages
           {
                DataTypePicker.BindingContext = App.DataTypeList;
                NumCharsEntry.Keyboard = Keyboard.Numeric;
-               NumCharsEntry.SetBinding(Entry.TextProperty, "Num1To9999");
-               NumCharsEntry.BindingContext = new EntryRestrictions();
-               //Tracer.SetBinding(Entry.TextProperty, "Num1To9999");
+               //NumCharsEntry.SetBinding(Entry.TextProperty, "Num1To9999");
+               //Tracer.SetBinding(Entry.TextProperty, "ProteinChars");
           }
 
           public string Tracer2

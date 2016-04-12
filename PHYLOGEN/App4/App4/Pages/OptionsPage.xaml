@@ -10,7 +10,7 @@
           <StackLayout Spacing="20">
                <StackLayout Orientation="Horizontal">
                     <Label Text="Number of Characters:" VerticalOptions="Center"/>
-                    <Entry x:Name="NumCharsEntry" WidthRequest="80" HorizontalOptions="CenterAndExpand" />
+                    <Entry x:Name="NumCharsEntry" WidthRequest="80" Text="{Binding NumberOfCharacters, Mode=TwoWay}" HorizontalOptions="CenterAndExpand" />
                </StackLayout>
                <StackLayout Orientation="Horizontal">
                     <Label Text="Data Type:" VerticalOptions="Center" HorizontalOptions="Center" />
@@ -18,17 +18,17 @@
                </StackLayout>
                <StackLayout Orientation="Horizontal">
                     <Label Text="Gap Character:" VerticalOptions="Center" HorizontalOptions="Center" />
-                    <Entry x:Name="GapCharEntry" WidthRequest="50" HorizontalOptions="CenterAndExpand"/>
+                    <Entry x:Name="GapCharEntry" WidthRequest="50" Text="{Binding SingleChar}" HorizontalOptions="CenterAndExpand"/>
                </StackLayout>
                <StackLayout Orientation="Horizontal">
                     <Label Text="Missing Character:" VerticalOptions="Center" HorizontalOptions="Center" />
-                    <Entry x:Name="MissCharEntry" WidthRequest="50" HorizontalOptions="CenterAndExpand"/>
+                    <Entry x:Name="MissCharEntry" WidthRequest="50" Text="" HorizontalOptions="CenterAndExpand"/>
                </StackLayout>
                <StackLayout Orientation="Horizontal">
                     <Label Text="Interleave Data Matrix:" VerticalOptions="Center" HorizontalOptions="Center" />
                     <Switch x:Name="InterleaveSwitch" Toggled="Switch_OnToggled"></Switch>
                </StackLayout>
-               <Entry x:Name="Tracer" Text="pizza hut" TextColor="Red"></Entry>
+               <Entry x:Name="Tracer" Text="{Binding NumberOfCharacters}" TextColor="Red"></Entry>
           </StackLayout>
      </ContentPage.Content>
 </ContentPage>

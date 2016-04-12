@@ -1,50 +1,63 @@
-﻿using Phylogen.Classes.@enum;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using Phylogen.Classes.@enum;
 
 namespace Phylogen.Classes.Options
 {
-     public sealed class Options
+     public sealed class Options : INotifyPropertyChanged
      {
-          private static readonly Options instance = new Options();
-
+          private static Options _instance;
           private Options() { }
 
-          public static Options Instance { get { return instance;} }
+          private static object _syncLock = new object();
+
+          public static Options GetOptions () {
+               if (_instance == null){
+                    lock (_syncLock){
+                         if (_instance == null)
+                              _instance = new Options();
+                    }
+               }
+               return _instance;
+          }
 
 
-          private static int _numberOfCharacters;
-          public static int NumberOfCharacters
+          private int _numberOfCharacters;
+          public int NumberOfCharacters
           {
                get { return _numberOfCharacters; }
-               set { _numberOfCharacters = value; }
+               set { _numberOfCharacters = value; OnPropertyChanged(); }
           }
 
-          private static SequenceTypeEnum _dataType;
-          public static SequenceTypeEnum DataType
+          private SequenceTypeEnum _dataType;
+          public SequenceTypeEnum DataType
           {
                get { return _dataType; }
-               set { _dataType = value; }
+               set { _dataType = value; OnPropertyChanged(); }
           }
 
-          private static char _gapCharacter;
-          public static char GapCharacter
+          private char _gapCharacter;
+          public char GapCharacter
           {
                get { return _gapCharacter; }
-               set { _gapCharacter = value; }
+               set { _gapCharacter = value; OnPropertyChanged(); }
           }
 
-          private static char _missingCharacter;
-          public static char MissingCharacter
+          private char _missingCharacter;
+          public char MissingCharacter
           {
                get { return _missingCharacter; }
-               set { _missingCharacter = value; }
+               set { _missingCharacter = value; OnPropertyChanged(); }
           }
 
-          private static bool _interleaveMatrix;
-          public static bool InterleaveMatrix
+          private bool _interleaveMatrix;
+          public bool InterleaveMatrix
           {
                get { return _interleaveMatrix; }
-               set { _interleaveMatrix = value; }
+               set { _interleaveMatrix = value; OnPropertyChanged(); }
           }
 
+          public event PropertyChangedEventHandler PropertyChanged;
+          private void OnPropertyChanged([CallerMemberName] string propertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
      }
 }

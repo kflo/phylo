@@ -7,7 +7,7 @@ namespace Phylogen.Pages
 {
      public partial class TabbedCreatePage : TabbedPage
      {
-          Options _options = Options.Instance;
+          Options _options = Options.GetOptions();
 
           public TabbedCreatePage()
           {
@@ -43,21 +43,21 @@ namespace Phylogen.Pages
                switch (e.PropertyName)
                {
                     case "NumOfChar":
-                         Options.NumberOfCharacters = Convert.ToInt32(e.PropertyName);
+                         _options.NumberOfCharacters = Convert.ToInt32(e.PropertyName);
                          OptionsPage optPage2 = (OptionsPage)Children[1];
                          optPage2.Tracer2 = e.PropertyName;
                          break;
                     case "DataType":
-                         Options.DataType = (SequenceTypeEnum)Convert.ToInt32(e.PropertyName);
+                         _options.DataType = (SequenceTypeEnum)Convert.ToInt32(e.PropertyName);
                          break;
                     case "GapChar":
-                         Options.GapCharacter = Convert.ToChar(e.PropertyName);
+                         _options.GapCharacter = Convert.ToChar(e.PropertyName);
                          break;
                     case "MissChar":
-                         Options.MissingCharacter = Convert.ToChar(e.PropertyName);
+                         _options.MissingCharacter = Convert.ToChar(e.PropertyName);
                          break;
                     case "InterleaveBool":
-                         Options.InterleaveMatrix = Convert.ToBoolean(e.PropertyName);
+                         _options.InterleaveMatrix = Convert.ToBoolean(e.PropertyName);
                          break;
                }
           }
