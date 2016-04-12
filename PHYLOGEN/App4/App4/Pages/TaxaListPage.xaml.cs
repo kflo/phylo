@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
-namespace App4.Pages
+namespace Phylogen.Pages
 {
      public partial class TaxaListPage : ContentPage
      {

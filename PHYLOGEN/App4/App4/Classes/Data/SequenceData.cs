@@ -1,6 +1,6 @@
-﻿using App4.Classes.@enum;
+﻿using Phylogen.Classes.@enum;
 
-namespace App4.Classes.Data
+namespace Phylogen.Classes.Data
 {
      internal class SequenceData : IDataType
      {

@@ -1,11 +1,10 @@
-﻿using App4.Classes.Options;
+﻿using System;
+using Phylogen.Classes;
+using Phylogen.Classes.Options;
+using Xamarin.Forms;
 
-namespace App4.Pages
+namespace Phylogen.Pages
 {
-     using System;
-     using Classes;
-     using Xamarin.Forms;
-
      public partial class AddTaxaPage : ContentPage
      {
           private readonly Button _addTaxaBtn = new Button { Text = "Add These Taxa", IsEnabled = false };

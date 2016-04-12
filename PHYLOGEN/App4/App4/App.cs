@@ -1,13 +1,10 @@
-﻿using App4.Classes.Options;
-using App4.Pages;
+﻿using System.Collections.Generic;
+using Phylogen.Classes;
+using Phylogen.Pages;
+using Xamarin.Forms;
 
-namespace App4
+namespace Phylogen
 {
-     using Xamarin.Forms;
-     using System.Collections.Generic;
-     using System.Linq;
-     using App4.Classes;
-
      public class App : Application
      {
           public static List<Color> ColorList { get; set; }

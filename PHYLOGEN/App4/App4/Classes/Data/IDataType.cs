@@ -1,4 +1,4 @@
-﻿namespace App4.Classes.Data
+﻿namespace Phylogen.Classes.Data
 {
      public interface IDataType
      {

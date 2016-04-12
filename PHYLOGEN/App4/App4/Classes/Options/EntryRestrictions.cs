@@ -1,10 +1,7 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
-using Xamarin.Forms;
 
-namespace App4.Classes.Options
+namespace Phylogen.Classes.Options
 {
      public class EntryRestrictions : INotifyPropertyChanged
      {

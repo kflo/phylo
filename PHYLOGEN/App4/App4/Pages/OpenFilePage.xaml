@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App4.Pages.OpenFilePage">
+             x:Class="Phylogen.Pages.OpenFilePage">
      <StackLayout Spacing="20" Padding="10">
           <Label Text="If you have an existing Nexus file, you can open it here to view or edit, in-app: " VerticalOptions="Center" HorizontalOptions="Center" />
           <Entry x:Name="FilenameEntryBox" Placeholder="Filename..." IsEnabled="False"></Entry>

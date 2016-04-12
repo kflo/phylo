@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace App4.Pages
+namespace Phylogen.Pages
 {
      public partial class OpenFilePage : ContentPage
      {

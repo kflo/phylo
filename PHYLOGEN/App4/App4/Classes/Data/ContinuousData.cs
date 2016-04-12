@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace App4.Classes.Data
+namespace Phylogen.Classes.Data
 {
      internal class ContinuousData : IDataType
      {

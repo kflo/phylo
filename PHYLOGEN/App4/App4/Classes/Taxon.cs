@@ -1,9 +1,8 @@
-﻿using App4.Classes.@enum;
+﻿using Phylogen.Classes.@enum;
+using Xamarin.Forms;
 
-namespace App4.Classes
+namespace Phylogen.Classes
 {
-     using Xamarin.Forms;
-
      public class Taxon
      {
           private int _numEntries;

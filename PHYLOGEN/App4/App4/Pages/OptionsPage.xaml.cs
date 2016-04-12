@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Threading.Tasks;
-using App4.Classes;
-using App4.Classes.@enum;
-using App4.Classes.Options;
+using Phylogen.Classes.@enum;
+using Phylogen.Classes.Options;
 using Xamarin.Forms;
 
-namespace App4.Pages
+namespace Phylogen.Pages
 {
      public partial class OptionsPage : ContentPage
      {

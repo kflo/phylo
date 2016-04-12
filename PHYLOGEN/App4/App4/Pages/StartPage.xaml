@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App4.Pages.StartPage" IsEnabled="true" Title="  PHYLOGEN" BackgroundImage="bg2" >
+             x:Class="Phylogen.Pages.StartPage" IsEnabled="true" Title="  PHYLOGEN" BackgroundImage="bg2" >
      <ContentPage.Content>
           <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical" Padding="10" Spacing="10">
                <StackLayout HeightRequest="170"/>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="App4.Droid" android:installLocation="auto" android:versionCode="1">
 	<uses-sdk android:minSdkVersion="19" />
-	<application android:label="Phylogen"></application>
+	<application android:label="Phylogen" android:icon="@drawable/icon"></application>
 </manifest>

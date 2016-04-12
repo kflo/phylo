@@ -1,7 +1,6 @@
-﻿using System;
-using App4.Classes.@enum;
+﻿using Phylogen.Classes.@enum;
 
-namespace App4.Classes.Options
+namespace Phylogen.Classes.Options
 {
      public sealed class Options
      {

@@ -1,4 +1,4 @@
-﻿namespace App4.Classes.@enum
+﻿namespace Phylogen.Classes.@enum
 {
      public enum SequenceTypeEnum
      {
