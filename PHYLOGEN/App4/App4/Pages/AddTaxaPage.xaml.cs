@@ -16,7 +16,7 @@ namespace Phylogen.Pages
           private int _numTaxa;
           private Button[] _rowBtnArray;
           private StackLayout[] _rowStackArray;
-          private bool _taxaTxtChanged;
+          //private bool _taxaTxtChanged;
           private Entry[] _taxonArray;
 
           public AddTaxaPage(string title)
@@ -91,7 +91,7 @@ namespace Phylogen.Pages
                if (answer == null)
                {
                     _numTaxa = newNumTaxa;
-                    _taxaTxtChanged = false;
+                    //_taxaTxtChanged = false;
                     Populate();
                }
           }
@@ -163,7 +163,7 @@ namespace Phylogen.Pages
                var entrySent = (Entry)sender;
                if (entrySent.Text.Length > 0)
                {
-                    _taxaTxtChanged = true;            //OBSOLETE?
+                    //_taxaTxtChanged = true;            //OBSOLETE?
                     _addTaxaBtn.IsEnabled = true;
                }
           }

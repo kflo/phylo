@@ -5,7 +5,7 @@ namespace Phylogen.Classes
 {
      public class Taxon
      {
-          private int _numEntries;
+          //private int _numEntries;
           public string Alias { get; set; }
           public string Name { get; set; }
           public char[] Data { get; set; }
