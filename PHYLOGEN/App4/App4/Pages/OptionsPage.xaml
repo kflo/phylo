@@ -1,34 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:app4="clr-namespace:App4;assembly=App4"
+             xmlns:app4="clr-namespace:App4;assembly=App4" 
              x:Class="Phylogen.Pages.OptionsPage">
      <ContentPage.Padding>
-          <OnPlatform x:TypeArguments="Thickness" iOS="20, 40, 20, 20" Android="20, 20, 20, 20" WinPhone="20, 20, 20, 20" />
+          <OnPlatform x:TypeArguments="Thickness" iOS="20, 40, 20, 20" Android="20, 20, 20, 20" WinPhone="20, 20, 20, 20"/>
      </ContentPage.Padding>
      <ContentPage.Content>
-          <StackLayout Spacing="20">
+          <StackLayout Spacing="15">
                <StackLayout Orientation="Horizontal">
-                    <Label Text="Number of Characters:" VerticalOptions="Center"/>
-                    <Entry x:Name="NumCharsEntry" WidthRequest="80" Text="{Binding NumberOfCharacters, Mode=TwoWay}" HorizontalOptions="CenterAndExpand" />
+                    <Label Text="Number of Characters:" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
+                    <Entry x:Name="NumCharsEntry" WidthRequest="90" Completed="NumCharsEntry_OnCompleted" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="Center"/>
                </StackLayout>
                <StackLayout Orientation="Horizontal">
-                    <Label Text="Data Type:" VerticalOptions="Center" HorizontalOptions="Center" />
-                    <Picker x:Name="DataTypePicker" Title="Type of Data to Compare" HorizontalOptions="CenterAndExpand"/>
+                    <Label Text="Data Type:" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" />
+                    <Picker x:Name="DataTypePicker" WidthRequest="150" Title="Type of Data to Compare" SelectedIndexChanged="DataTypePicker_OnSelectedIndexChanged" HorizontalOptions="EndAndExpand"/>
                </StackLayout>
                <StackLayout Orientation="Horizontal">
-                    <Label Text="Gap Character:" VerticalOptions="Center" HorizontalOptions="Center" />
-                    <Entry x:Name="GapCharEntry" WidthRequest="50" Text="{Binding SingleChar}" HorizontalOptions="CenterAndExpand"/>
+                    <Label Text="Gap Character:" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" />
+                    <Entry x:Name="GapCharEntry" WidthRequest="90" Text="-" Placeholder="-" Completed="GapCharEntry_OnCompleted" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="Center"/>
                </StackLayout>
                <StackLayout Orientation="Horizontal">
-                    <Label Text="Missing Character:" VerticalOptions="Center" HorizontalOptions="Center" />
-                    <Entry x:Name="MissCharEntry" WidthRequest="50" Text="" HorizontalOptions="CenterAndExpand"/>
+                    <Label Text="Missing Character:" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" />
+                    <Entry x:Name="MissCharEntry" WidthRequest="90" Text="?" Placeholder="?" Completed="MissCharEntry_OnCompleted" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="Center"/>
                </StackLayout>
-               <StackLayout Orientation="Horizontal">
-                    <Label Text="Interleave Data Matrix:" VerticalOptions="Center" HorizontalOptions="Center" />
-                    <Switch x:Name="InterleaveSwitch" Toggled="Switch_OnToggled"></Switch>
+               <StackLayout Orientation="Horizontal" Padding="0,20,0,0">
+                    <Label Text="Interleave Data Matrix:"  FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" />
+                    <Switch x:Name="InterleaveSwitch" Toggled="Switch_OnToggled" HorizontalOptions="EndAndExpand"></Switch>
                </StackLayout>
-               <Entry x:Name="Tracer" Text="{Binding NumberOfCharacters}" TextColor="Red"></Entry>
+               <Entry x:Name="Tracer" TextColor="Accent"></Entry>
+               <!--Label Text="{Binding NumberOfCharacters}"></Label>
+               <Label Text="{Binding DataType}"></Label>
+               <Label Text="{Binding GapCharacter}"></Label>
+               <Label Text="{Binding MissingCharacter}"></Label>
+               <Label Text="{Binding InterleaveMatrix}"></Label-->
           </StackLayout>
      </ContentPage.Content>
 </ContentPage>

@@ -11,6 +11,13 @@ namespace Phylogen.Pages
                Title = "  OPEN Existing File";
           }
 
+          private void FileBrowseBtn_OnClicked(object sender, EventArgs e)
+          {
+               FilenameEntryBox.Text = "NexusFile100.nex";
+               //FileBrowseBtn.BackgroundColor = Color.Gray;
+               FileOpenBtn.IsEnabled = true;
+               FileOpenBtn.BackgroundColor = Color.Accent;
+          }
 
           private void FileOpenBtn_OnClicked(object sender, EventArgs e)
           {
@@ -21,12 +28,5 @@ namespace Phylogen.Pages
                }
           }
 
-          private void FileBrowseBtn_OnClicked(object sender, EventArgs e)
-          {
-               FilenameEntryBox.Text = "NexusFile100.nex";
-               //FileBrowseBtn.BackgroundColor = Color.Gray;
-               FileOpenBtn.IsEnabled = true;
-               FileOpenBtn.BackgroundColor = Color.Accent;
-          }
      }
 }

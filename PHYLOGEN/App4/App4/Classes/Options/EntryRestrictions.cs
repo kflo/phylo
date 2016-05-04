@@ -35,12 +35,19 @@ namespace Phylogen.Classes.Options
           //===========================================================
           private List<int> GapIllegal = new List<int> {32,34,39,40,41,42,44,47,58,59,60,61,62,91,92,93,94,96,123,125}; // ( ) [ ] { } / \ , ; : = * ' " ` < > ^
           private string _singleChar;
-          public string SingleChar
-          {
+          public string SingleChar {
                get { return _singleChar; }
                set
                {
-                    if (value.Length < 2 && !GapIllegal.Contains(value[value.Length - 1]))
+                    if (value.Length > 0) {
+                         if (!GapIllegal.Contains(value[value.Length - 1])) {
+                              if (value.Length > 1)
+                                   _singleChar = value.Remove(value.Length - 1);
+                              else
+                                   _singleChar = value;
+                         }
+                    }
+                    else
                          _singleChar = value;
                     OnPropertyChanged();
                }
@@ -49,15 +56,15 @@ namespace Phylogen.Classes.Options
           //        DNA
           //===========================================================
           private List<int> ACGT = new List<int> { 65, 67, 71, 84, 97, 99, 103, 116 }; //A C G T a c g t
-          private string _dnaChars;
-          public string DnaChars {
-               get { return _dnaChars; }
+          private string _dna;
+          public string Dna {
+               get { return _dna; }
                set {
                     if (value.Length > 0) {
                          if (ACGT.Contains(value[value.Length-1]))
-                              _dnaChars = value.ToUpper();
+                              _dna = value.ToUpper();
                     } else
-                         _dnaChars = value;
+                         _dna = value;
                     OnPropertyChanged();
                }
           }
@@ -65,33 +72,78 @@ namespace Phylogen.Classes.Options
           //        RNA
           //===========================================================
           private List<int> ACGU = new List<int> { 65, 67, 71, 85, 97, 99, 103, 117 }; //A C G U a c g u
-          private string _rnaChars;
-          public string RnaChars {
-               get { return _rnaChars; }
+          private string _rna;
+          public string Rna {
+               get { return _rna; }
                set {
                     if (value.Length > 0) {
                          if (ACGU.Contains(value[value.Length - 1]))
-                              _rnaChars = value.ToUpper();
+                              _rna = value.ToUpper();
                     } else
-                         _rnaChars = value;
+                         _rna = value;
                     OnPropertyChanged();
                }
           }
+
           //===========================================================
           //        Protein
           //===========================================================
           private List<int> Proteins = new List<int> { 72, 74, 79, 85, 104, 106, 111, 117 }; //NOT(!) H J O U h j o u
-          private string _proteinChars;
-          public string ProteinChars {
-               get { return _proteinChars; }
+          private string _protein;
+          public string Protein {
+               get { return _protein; }
                set {
                     if (value.Length > 0) {
                          if (value[value.Length - 1] < 65 || (value[value.Length - 1] > 90 && value[value.Length - 1] < 97) || value[value.Length - 1] > 122 || Proteins.Contains(value[value.Length - 1]))
-                              _proteinChars = value.Remove(value.Length-1);
+                              _protein = value.Remove(value.Length-1);
                          else
-                              _proteinChars = value.ToUpper();
+                              _protein = value.ToUpper();
                     } else
-                         _proteinChars = value;
+                         _protein = value;
+                    OnPropertyChanged();
+               }
+          }
+
+          //===========================================================
+          //        Nucleotide
+          //===========================================================
+          private List<int> nucs = new List<int> { 65, 67, 71, 84, 85, 97, 99, 103, 116, 117 }; //A C G T U a c g t u
+          private string _nucleotide;
+          public string Nucleotide
+          {
+               get { return _nucleotide; }
+               set
+               {
+                    if (value.Length > 0)
+                    {
+                         if (nucs.Contains(value[value.Length - 1]))
+                              _nucleotide = value.ToUpper();
+                    }
+                    else
+                         _nucleotide = value;
+                    OnPropertyChanged();
+               }
+          }
+
+
+          //===========================================================
+          //        ALPHA
+          //===========================================================
+          private string _alphaChars;
+          public string AlphaChars
+          {
+               get { return _alphaChars; }
+               set
+               {
+                    if (value.Length > 0)
+                    {
+                         if (value[value.Length - 1] < 65 || (value[value.Length - 1] > 90 && value[value.Length - 1] < 97) || value[value.Length - 1] > 122)
+                              _alphaChars = value.Remove(value.Length - 1);
+                         else
+                              _alphaChars = value.ToUpper();
+                    }
+                    else
+                         _alphaChars = value;
                     OnPropertyChanged();
                }
           }

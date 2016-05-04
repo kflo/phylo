@@ -1,18 +1,19 @@
 ﻿using System.Collections.Generic;
 using Phylogen.Classes;
+using Phylogen.Classes.Data;
 using Phylogen.Pages;
 using Xamarin.Forms;
 
 namespace Phylogen
 {
-     public class App : Application
+     public class Application : Xamarin.Forms.Application
      {
           public static List<Color> ColorList { get; set; }
           public static List<Taxon> TaxaList { get; set; }
           public static List<string> TaxaList2 { get; set; }
           public static List<string> DataTypeList { get; set; }
 
-          public App()
+          public Application()
           {
                // The root page of your application
                TaxaList = new List<Taxon>();

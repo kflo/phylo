@@ -17,7 +17,7 @@ namespace App4.Droid
                base.OnCreate(bundle);
 
                Xamarin.Forms.Forms.Init(this, bundle);
-               LoadApplication(new App());
+               LoadApplication(new Phylogen.Application());
           }
      }
 }
